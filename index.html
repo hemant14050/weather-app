@@ -10,86 +10,92 @@
 <body>
     <!-- main wrapper -->
     <div class="wrapper">
-        <h1>Weather App</h1>
+        <h1 class="main-heading">Weather App</h1>
 
         <!-- tab container -->
         <div class="tab-container">
-            <span class="tab" data-useWeather>Your Weather</span>
+            <span class="tab" data-userWeather>Your Weather</span>
             <span class="tab" data-searchWeather>Search Weather</span>
         </div>
 
-        <!-- weather container -->
-        <div class="weather-container">
+        <div class="parent-card">
 
             <!-- grant location container  -->
             <div class="grant-location-container">
-                <img src="" alt="" width="" height="" loading="lazy">
-                <p>grant location access</p>
-                <p>allow to get weather information</p>
+                <img src="./assets/location.png" alt="location" width="80px" height="80px" loading="lazy">
+                <p class="grant-loc-p1">Grant location access</p>
+                <p class="grant-loc-p2">Allow to get weather information</p>
                 <button class="btn grant-btn" data-grantAccess>Grant Access</button>
             </div>
-        </div>
 
-        <!-- search form -->
-        <form action="" class="form-container" data-searchForm>
-            <input type="text" placeholder="Search for City..." data-searchInput>
-            <button class="btn search-btn">
-                <img src="" alt="" loading="lazy">
-            </button>
-        </form>
+            <!-- search form -->
+            <form action="" class="form-container" data-searchForm>
+                <input type="text" placeholder="Search for City..." data-searchInput>
+                <button class="btn search-btn">
+                    <img src="./assets/search.png" alt="" height="17px" loading="lazy">
+                </button>
+            </form>
 
-        <!-- loading screen container -->
-        <div class="loading-container">
-            <img src="" alt="">
-            <p>Loading</p>
-        </div>
-
-        <!-- show weather info -->
-        <div class="user-info-container">
-
-            <!-- city name and flag -->
-            <div class="name">
-                <p data-cityName></p>
-                <img src="" alt="" data-countryIcon>
+            <!-- loading screen container -->
+            <div class="loading-container">
+                <img src="./assets/loading.gif" alt="" height="110px" width="110px">
+                <p>Loading...</p>
             </div>
 
-            <!-- weather description -->
-            <p data-weatherDesc></p>
+            <!-- show weather info -->
+            <div class="user-info-container">
 
-            <!-- weather icon -->
-            <img src="" alt="" data-weatherIcon>
-
-            <!-- temperature -->
-            <p data-temp></p>
-
-            <!-- 3 cards -->
-            <div class="cards-container">
-
-                <!-- card 1 -->
-                <div class="card">
-                    <img src="" alt="">
-                    <p></p>
-                    <p></p>
+                <!-- city name and flag -->
+                <div class="name">
+                    <p data-cityName></p>
+                    <img src="" alt="" data-countryIcon>
                 </div>
 
-                <!-- card 2 -->
-                <div class="card">
-                    <img src="" alt="">
-                    <p></p>
-                    <p></p>
+                <!-- weather description -->
+                <p data-weatherDesc></p>
+
+                <!-- weather icon -->
+                <img src="" alt="" data-weatherIcon>
+
+                <!-- temperature -->
+                <p data-temp></p>
+
+                <!-- 3 cards -->
+                <div class="cards-container">
+
+                    <!-- card 1 -->
+                    <div class="card">
+                        <img src="./assets/wind.png" alt="" height="100px">
+                        <p>Wind Speed</p>
+                        <div class="line"></div>
+                        <p data-windSpeed></p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="card">
+                        <img src="./assets/humidity.png" alt="" height="100px">
+                        <p>Humidity</p>
+                        <div class="line"></div>
+                        <p data-humidity></p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="card">
+                        <img src="./assets/cloud.png" alt="" height="100px">
+                        <p>Clouds</p>
+                        <div class="line"></div>
+                        <p data-clouds></p>
+                    </div>
                 </div>
 
-                <!-- card 3 -->
-                <div class="card">
-                    <img src="" alt="">
-                    <p></p>
-                    <p></p>
-                </div>
             </div>
-
         </div>
 
     </div>
+
+    <footer>
+        Made with ❤️ by Hemant
+    </footer>
 
     <script src="script.js"></script>
 </body>

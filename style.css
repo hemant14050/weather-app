@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Murecho&family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kalam', cursive;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #0F172A, #1B2E52);
+    color: white;
+    min-height: 100vh;
+}
+
+.main-heading {
+    font-size: 3rem;
+    margin: 30px;
+}
+
+.form-container.active {
+    scale: 1;
+    opacity: 1;
+}
+
+.parent-card {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 550px;
+}
+
+.tab-container {
+    width: 90%;
+    max-width: 550px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab-container .tab {
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    border: 1px solid #50B748;
+    border-radius: 1rem;
+}
+
+.grant-location-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    margin: 30px 0 30px 0;
+}
+
+.grant-loc-p1 {
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.btn {
+    border: none;
+    padding: 5px 10px 5px 10px;
+    font-size: large;
+    border-radius: 1rem;
+    color: white;
+    background-color: #50B748;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    background-color: #7fce79;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0 20px 0;
+}
+
+.form-container input {
+    width: 90%;
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.5s;
+    height: 40px;
+}
+
+.form-container input:focus {
+    border: 1px solid rgb(83, 202, 134);
+    scale: 1.01;
+}
+
+.search-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 0 40px 0;
+}
+
+.user-info-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 20px 0;
+}
+
+.cards-container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    width: fit-content;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: rgba(162, 172, 190, 0.5);
+    padding: 10px 30px;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.line {
+    height: 1px;
+    background-color: rgba(44, 45, 48, 0.5);
+    width: 110%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-image: linear-gradient(to right, #0F172A, #1B2E52);
+    padding-top: 20px;
+    margin: -3px 0;
+    padding: 5px;
+}
+
+@media only screen 
+and (max-width : 550px) {
+    .cards-container {
+        width: 100%;
+        display: flex;
+        width: fit-content;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+}
+
+.tab.current-tab {
+    background-color: rgba(162, 172, 190, 0.5);
+    border-radius: 1rem;
+}
