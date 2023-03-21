@@ -104,7 +104,7 @@
 
 .form-container input:focus {
     border: 1px solid rgb(83, 202, 134);
-    scale: 1.01;
+    scale: 1.02;
 }
 
 .search-btn {
@@ -170,6 +170,12 @@ footer {
     padding-top: 20px;
     margin: -3px 0;
     padding: 5px;
+}
+
+.error-card {
+    display: flex;
+    justify-content: center;
+    display: none;
 }
 
 @media only screen 

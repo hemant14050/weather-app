@@ -5,6 +5,7 @@ const grantAccessContainer = document.querySelector(".grant-location-container")
 const searchForm = document.querySelector("[data-searchForm]");
 const loadingScreen = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".user-info-container");
+const errorCard = document.querySelector("[data-errorCard]");
 
 let currentTab = userTab;
 const API_KEY = "bdea0b849da8e69ae596a9a5f2ddbf46";
@@ -21,11 +22,12 @@ function switchTab(clickedTab) {
             userInfoContainer.classList.remove("active");
             grantAccessContainer.classList.remove("active");
             searchForm.classList.add("active");
+            errorCard.classList.remove("active");
         } else {
             // search tab to --> weather tab
             searchForm.classList.remove("active");
             userInfoContainer.classList.remove("active");
-
+            errorCard.classList.remove("active");
             // to display weather, check local storage first
             getfromSessionStorage();
         }
@@ -59,6 +61,7 @@ async function fetchUserWeatherInfo(coordinates) {
     grantAccessContainer.classList.remove("active");
     // make loading icon visible
     loadingScreen.classList.add("active");
+    errorCard.classList.remove("active");
 
     // API Call
     try {
@@ -70,10 +73,18 @@ async function fetchUserWeatherInfo(coordinates) {
         loadingScreen.classList.remove("active");
         userContainer.classList.add("active");
         
-        renderWeatherData(data);
+        if(data) {
+            renderWeatherData(data);
+        } else {
+            errorCard.querySelector('img').src = "./assets/not-found.png";
+            errorCard.classList.add("active");
+            loadingScreen.classList.remove("active");
+        }
 
     } catch(err) {
-        console.log("chal raha hai...", err);
+        errorCard.querySelector('img').src = "./assets/not-found.png";
+        errorCard.classList.add("active");
+        loadingScreen.classList.remove("active");
     }
 }
 
@@ -104,10 +115,11 @@ function renderWeatherData(weatherInfo) {
 function showposition(position) {
     const userCoordinates = {
         lat: position.coords.latitude,
-        lon: position.coords.longitute,
+        lon: position.coords.longitude,
     }
     
-    console.log("show pos");
+    // console.log("show pos");
+    // console.log(userCoordinates);
     sessionStorage.setItem("user-coordinates", JSON.stringify(userCoordinates));
     
     fetchUserWeatherInfo(userCoordinates);
@@ -120,7 +132,7 @@ function getLocation(){
         // show an alert
         window.alert("Geolocation not supported..");
     }
-    console.log("get loc");
+    // console.log("get loc");
 }
 
 const grantAccessButton = document.querySelector("[data-grantAccess]");
@@ -139,6 +151,7 @@ async function fetchSearchWeatherInfo(city){
     loadingScreen.classList.add("active");
     userContainer.classList.remove("active");
     grantAccessContainer.classList.remove("active");
+    errorCard.classList.remove("active");
 
     try {
         const response = await fetch(
@@ -147,11 +160,21 @@ async function fetchSearchWeatherInfo(city){
         const data = await response.json();
 
         loadingScreen.classList.remove("active");
-        userInfoContainer.classList.add("active");
+        
 
-        renderWeatherData(data);
+        if(data?.cod == '404') {
+            errorCard.querySelector('img').src = "./assets/not-found.png";
+            errorCard.classList.add("active");
+            loadingScreen.classList.remove("active");
+        } else {
+            userInfoContainer.classList.add("active");
+            renderWeatherData(data);
+            console.log(data);
+        }
 
     } catch(err) {
-        console.log("Error aaya hai..");
+        errorCard.querySelector('img').src = "./assets/not-found.png";
+        errorCard.classList.add("active");
+        loadingScreen.classList.remove("active");
     }
 }
