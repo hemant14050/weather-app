@@ -31,7 +31,7 @@
             <!-- search form -->
             <form action="" class="form-container" data-searchForm>
                 <input type="text" placeholder="Search for City..." data-searchInput>
-                <button class="btn search-btn">
+                <button type="submit" class="btn search-btn">
                     <img src="./assets/search.png" alt="" height="17px" loading="lazy">
                 </button>
             </form>
@@ -46,9 +46,9 @@
             <div class="user-info-container">
 
                 <!-- city name and flag -->
-                <div class="name">
-                    <p data-cityName></p>
-                    <img src="" alt="" data-countryIcon>
+                <div class="name-flag">
+                    <p data-cityName class="city-name"></p>
+                    <img src="" alt="" height="20px" data-countryIcon>
                 </div>
 
                 <!-- weather description -->
@@ -58,7 +58,7 @@
                 <img src="" alt="" data-weatherIcon>
 
                 <!-- temperature -->
-                <p data-temp></p>
+                <p data-temp class="temp"></p>
 
                 <!-- 3 cards -->
                 <div class="cards-container">

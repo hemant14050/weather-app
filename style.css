@@ -10,7 +10,6 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-image: linear-gradient(to right, #0F172A, #1B2E52);
     color: white;
@@ -20,11 +19,7 @@
 .main-heading {
     font-size: 3rem;
     margin: 30px;
-}
-
-.form-container.active {
-    scale: 1;
-    opacity: 1;
+    text-align: center;
 }
 
 .parent-card {
@@ -32,6 +27,7 @@
     flex-direction: column;
     width: 90%;
     max-width: 550px;
+    font-size: 25px;
 }
 
 .tab-container {
@@ -51,12 +47,12 @@
 
 .grant-location-container {
     width: 100%;
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     text-align: center;
     margin: 30px 0 30px 0;
+    display: none;
 }
 
 .grant-loc-p1 {
@@ -80,12 +76,20 @@
     background-color: #7fce79;
 }
 
+.temp {
+    font-size: 30px;
+} 
+
+.city-name {
+    font-size: 30px;
+}
+
 .form-container {
     width: 100%;
-    display: flex;
     justify-content: space-between;
     gap: 10px;
     margin: 10px 0 20px 0;
+    display: none;
 }
 
 .form-container input {
@@ -111,27 +115,34 @@
 
 .loading-container {
     width: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 40px 0 40px 0;
+    display: none;
 }
 
 .user-info-container {
     width: 100%;
-    display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px 0 20px 0;
+    gap: 8px;
+    display: none;
 }
 
+.name-flag {
+    display: flex;
+    gap: 5px;
+}
+
+
 .cards-container {
-    width: 100%;
     display: flex;
     gap: 20px;
     width: fit-content;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 .card {
@@ -142,6 +153,7 @@
     flex-direction: column;
     align-items: center;
     gap: 4px;
+    width: 190px;
 }
 
 .line {
@@ -161,12 +173,8 @@ footer {
 }
 
 @media only screen 
-and (max-width : 550px) {
+and (max-width : 650px) {
     .cards-container {
-        width: 100%;
-        display: flex;
-        width: fit-content;
-        justify-content: space-between;
         flex-direction: column;
     }
 }
@@ -174,4 +182,8 @@ and (max-width : 550px) {
 .tab.current-tab {
     background-color: rgba(162, 172, 190, 0.5);
     border-radius: 1rem;
+}
+
+.active {
+    display: flex;
 }
