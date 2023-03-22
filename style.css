@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Murecho&family=Righteous&display=swap');
 
+
+:root {
+    --colorDarkBlue: #0F172A;
+    --colorLightBlue: #1B2E52;
+    --colorGreen: #50B748;
+    --colorLightGreen: #8aa28a;
+    --colorLightGreen1: #7fce79;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +20,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: linear-gradient(to right, #0F172A, #1B2E52);
+    background-image: linear-gradient(to right, var(--colorDarkBlue), var(--colorLightBlue));
     color: white;
     min-height: 100vh;
 }
@@ -41,7 +50,7 @@
 .tab-container .tab {
     padding: 5px 10px 5px 10px;
     cursor: pointer;
-    border: 1px solid #8aa28a;
+    border: 1px solid var(--colorLightGreen);
     border-radius: 1rem;
 }
 
@@ -67,13 +76,13 @@
     font-size: large;
     border-radius: 1rem;
     color: white;
-    background-color: #50B748;
+    background-color: var(--colorGreen);
     cursor: pointer;
     transition: all 0.5s;
 }
 
 .btn:hover {
-    background-color: #7fce79;
+    background-color: var(--colorLightGreen1);
 }
 
 .temp {
@@ -103,7 +112,7 @@
 }
 
 .form-container input:focus {
-    border: 1px solid rgb(83, 202, 134);
+    border: 1px solid var(--colorLightGreen1);
     scale: 1.02;
 }
 
@@ -111,6 +120,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50px;
 }
 
 .loading-container {
@@ -166,7 +176,7 @@ footer {
     display: flex;
     justify-content: center;
     color: white;
-    background-image: linear-gradient(to right, #0F172A, #1B2E52);
+    background-image: linear-gradient(to right, var(--colorDarkBlue), var(--colorLightBlue));
     padding-top: 20px;
     margin: -3px 0;
     padding: 5px;
@@ -176,6 +186,8 @@ footer {
     display: flex;
     justify-content: center;
     display: none;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media only screen 
@@ -192,4 +204,4 @@ and (max-width : 650px) {
 
 .active {
     display: flex;
-}
+ }

@@ -169,7 +169,6 @@ async function fetchSearchWeatherInfo(city){
         } else {
             userInfoContainer.classList.add("active");
             renderWeatherData(data);
-            console.log(data);
         }
 
     } catch(err) {
